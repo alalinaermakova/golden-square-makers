@@ -10,4 +10,5 @@ def test_password_checker_invalid():
     checker = PasswordChecker()
     with pytest.raises(Exception) as e:
         result = checker.check('4009e8!')
-        assert result == "Invalid password, must be 8+ characters."
+    error_msg = str(e.value)
+    assert error_msg == "Invalid password, must be 8+ characters."
